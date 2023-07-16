@@ -71,6 +71,22 @@ renderer.setSize(aspect.width, aspect.height);
 //Clock Class
 const clock = new THREE.Clock();
 
+
+//Para deixar a tela responsiva
+//resize
+window.addEventListener("resize", () => {
+  //Pega o novo tamanho da tela
+  aspect.width = window.innerWidth;
+  aspect.height = window.innerHeight;
+
+  //Atualiza o novo AspectRatio
+  camera.aspect = aspect.width / aspect.height;
+  camera.updateProjectionMatrix();
+
+  //Atualiza o novo tamanho do renderer (New RenderSize)
+  renderer.setSize(aspect.width, aspect.height);
+})
+
 const animate = () => {
   //GetElapsedTime
   const elapsedTime = clock.getElapsedTime();
