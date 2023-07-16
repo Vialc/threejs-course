@@ -85,6 +85,7 @@ window.addEventListener("resize", () => {
 
   //Atualiza o novo tamanho do renderer (New RenderSize)
   renderer.setSize(aspect.width, aspect.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 })
 
 const animate = () => {
